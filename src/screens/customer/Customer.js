@@ -10,6 +10,8 @@ const Customer = () => {
   const [nowPlayingData, setNowPlayingData] = useState([]);
   const [comedyData,setComedyData]=useState(null);
   const [actionData,setActionData]=useState(null)
+  const [supernaturalData,setSupernaturalData]=useState(null)
+  const [dramaData,setDramaData]=useState(null)
   const [user, setUser] = useState(null);
   const [loading,setLoading]=useState(true)
   const navigation = useNavigation();
@@ -50,6 +52,33 @@ const Customer = () => {
         Alert.alert(`Request for comedy movies failed: ${error.message}`);
       }
     };
+
+    const fetchSupernaturalMovies = async () => {
+      try {
+        const supernaturalMoviesCollection = await firestore()
+          .collection('movies')
+          .where('tags', 'array-contains', 'Supernatural')
+          .get();
+        const supernaturalMovies = supernaturalMoviesCollection.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setSupernaturalData(supernaturalMovies);
+      } catch (error) {
+        Alert.alert(`Request for comedy movies failed: ${error.message}`);
+      }
+    };
+    const fetchDramaMovies = async () => {
+      try {
+        const dramaMoviesCollection = await firestore()
+          .collection('movies')
+          .where('tags', 'array-contains', 'Drama')
+          .get();
+        const dramaMovies = dramaMoviesCollection.docs.map(doc => ({ id: doc.id, ...doc.data() }));
+        setDramaData(dramaMovies);
+      } catch (error) {
+        Alert.alert(`Request for comedy movies failed: ${error.message}`);
+      }
+    };
+    fetchDramaMovies();
+    fetchSupernaturalMovies();
     fetchActionMovies();
     fetchComedyMovies();
   }, []); 
@@ -82,6 +111,8 @@ const Customer = () => {
           <MovieCards label="Now Playing" data={nowPlayingData}  />
           <MovieCards label="Action" data={actionData}  />
           <MovieCards label="Comedy" data={comedyData}  />
+          <MovieCards label="Supernatural" data={supernaturalData}/>
+          <MovieCards label="Drama" data={dramaData}/>
         </View>
       </ScrollView>
     </View>

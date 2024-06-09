@@ -338,7 +338,7 @@ const styles = StyleSheet.create({
     flexDirection:'row',
     alignItems:'center',
     justifyContent:'space-between',
-    paddingHorizontal: 28,
+    paddingHorizontal: 30,
     padding: 10,
   },
   input: {
@@ -350,10 +350,10 @@ const styles = StyleSheet.create({
     fontSize:15,
     borderBottomWidth:1,
     borderColor:'gray',
-    marginLeft:10,
   },
   titleUser:{
     color:'white',
+    width:60
   },
   genderInputContainer: {
     flexDirection: 'row',

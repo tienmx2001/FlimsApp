@@ -39,6 +39,7 @@
     "react": "18.2.0",
     "react-native": "0.74.1",
     "react-native-document-picker": "^9.2.0",
+    "react-native-elements": "^3.4.3",
     "react-native-fs": "^2.20.0",
     "react-native-gesture-handler": "^2.16.2",
     "react-native-get-google-font": "^0.1.1",
@@ -46,6 +47,7 @@
     "react-native-image-crop-picker": "^0.41.1",
     "react-native-image-picker": "^7.1.2",
     "react-native-linear-gradient": "^2.8.3",
+    "react-native-modal": "^13.0.1",
     "react-native-orientation-locker": "^1.7.0",
     "react-native-paper": "^5.12.3",
     "react-native-progress": "^5.0.1",
@@ -56,6 +58,7 @@
     "react-native-svg": "^15.3.0",
     "react-native-vector-icons": "^10.1.0",
     "react-native-video": "^6.1.2",
+    "react-native-webview": "^13.10.3",
     "rn-fetch-blob": "^0.12.0",
     "tailwindcss": "^3.3.2",
     "whatwg-fetch": "^3.6.2"

@@ -129,7 +129,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
     },
     moviePoster: {
-        width: Math.round((Dimensions.get('window').width * 29.5) / 100),
+        width: Math.round((Dimensions.get('window').width * 29) / 100),
         height: 200,
     },
     movieCard: {

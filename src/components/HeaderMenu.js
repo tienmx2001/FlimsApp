@@ -7,7 +7,9 @@ const HeaderMenu= () => {
 
     return (
         <View style={styles.container}>
-            <TouchableOpacity activeOpacity={0.5} onPress={()=>{console.log('clicked')}} >
+            <TouchableOpacity activeOpacity={0.5} onPress={()=>{
+                navigation.navigate('PaymentSuccess')
+            }} >
                 <Text style={styles.tab}>Watching</Text>
             </TouchableOpacity>
             <TouchableOpacity activeOpacity={0.5} onPress={()=>{

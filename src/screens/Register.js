@@ -69,6 +69,8 @@ const Register = ({ navigation }) => {
             Full name không được phép để trống
           </HelperText>
           <TextInput
+            theme={{ roundness: 40 }}
+            underlineColor='transparent'
             label="Email"
             value={email}
             onChangeText={setEmail}

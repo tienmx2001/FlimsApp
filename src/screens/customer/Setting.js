@@ -157,22 +157,22 @@ export default function Setting() {
                 <View style={styles.rowWrapper}>
                   <TouchableOpacity
                     onPress={() => {
-                      // handle onPress
+                      navigation.navigate('Pay')
                     }}
                     style={styles.row}>
                     <View
                       style={[styles.rowIcon, { backgroundColor: 'gray' }]}>
                       <FeatherIcon
                         color="#fff"
-                        name="music"
+                        name="credit-card"
                         size={20} />
                     </View>
 
-                    <Text style={styles.rowLabel}>Sound</Text>
+                    <Text style={styles.rowLabel}>Pay</Text>
 
                     <View style={styles.rowSpacer} />
 
-                    <Text style={styles.rowValue}>Default</Text>
+                    <Text style={styles.rowValue}>ZaloPay</Text>
 
                     <FeatherIcon
                       color="#C6C6C6"
@@ -198,6 +198,7 @@ export default function Setting() {
                     <Text style={styles.rowLabel}>Dowloads</Text>
 
                     <View style={styles.rowSpacer} />
+                    <Text style={styles.rowValue}>Play Video</Text>
                     <FeatherIcon
                       color="#C6C6C6"
                       name="chevron-right"

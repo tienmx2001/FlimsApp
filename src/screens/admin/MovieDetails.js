@@ -22,7 +22,7 @@ const MovieDetails = ({ route }) => {
 
   const tagOptions = [
     'Comedy', 'Drama', 'Romantic', 'Action', 'Supernatural',
-    'Science Fiction', 'Cartoon', 'Detective Fiction', 'Teenager'
+    'Science Fiction', 'Cartoon', 'Detective Fiction', 'Teenager','Horror','Thriller','Mystery'
   ];
 
   useEffect(() => {
@@ -352,11 +352,12 @@ const styles = StyleSheet.create({
   buttonContainer: {
     flexDirection: 'row',
     justifyContent: 'space-between',
-    marginVertical: 20,
+    marginVertical: 10,
   },
   button:{
-    margin:10,
+    marginBottom:10,
     backgroundColor:'orange',
+    width:160,
   },
   buttonUpLoad:{
     backgroundColor:'orange',

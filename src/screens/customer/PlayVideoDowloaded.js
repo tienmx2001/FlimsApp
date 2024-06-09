@@ -5,6 +5,8 @@ import RNFS from 'react-native-fs';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useNavigation } from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/AntDesign'
+import Header from '../../components/Header';
+import Orientation from 'react-native-orientation-locker';
 
 const PlayVideoDowloaded = ({ route }) => {
   const { localUri, id } = route.params;
@@ -41,15 +43,23 @@ const PlayVideoDowloaded = ({ route }) => {
 
   return (
     <View style={styles.container}>
+    <Header login={false} goBack={navigation.goBack} label="Playing Video" />
       <Video
         source={{ uri: localUri }}
         style={styles.video}
         controls
         resizeMode="contain"
+        repeat={false}
+        onFullscreenPlayerWillPresent={() => {
+              Orientation.lockToLandscape();
+            }}
+        onFullscreenPlayerWillDismiss={() => {
+              Orientation.lockToPortrait();
+            }}
       />
       <View style={styles.buttonContainer}>
         <TouchableOpacity style={styles.deleteButton} onPress={confirmDelete}>
-          <Icon style={styles.deleteButtonText} name='delete' size={30}/>
+          <Icon style={styles.deleteButtonText} name='delete' />
         </TouchableOpacity>
       </View>
     </View>
@@ -66,18 +76,18 @@ const styles = StyleSheet.create({
   },
   buttonContainer: {
     position: 'absolute',
-    bottom: '20%',
-    left: 0,
+    bottom: '92%',
+    left: '85%',
     right: 0,
+    width:50,
   },
   deleteButton: {
     padding: 10,
-    borderRadius: 5,
-    alignItems:'flex-end'
   },
   deleteButtonText: {
     color: '#fff',
-    fontSize: 16,
+    fontSize: 23,
+   
   },
 });
 

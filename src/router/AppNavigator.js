@@ -18,6 +18,11 @@ import MovieDetails from '../screens/admin/MovieDetails';
 import HistoryWatched from '../screens/customer/HistoryWatched';
 import DownloadedVideos from '../screens/customer/DownloadedVideos';
 import PlayVideoDowloaded from '../screens/customer/PlayVideoDowloaded';
+import Pay from '../screens/payment/Pay';
+import PaymentMethods from '../screens/payment/PaymentMethods';
+import PaymentWeb from '../screens/payment/PaymentWeb';
+import PaymentSuccess from '../screens/payment/PaymentSuccess';
+
 
 
 const Stack = createStackNavigator();
@@ -96,6 +101,10 @@ const CustomerTabs = () => {
           <Stack.Screen name='HistoryWatched' component={HistoryWatched}/>
           <Stack.Screen name="DownloadedVideos" component={DownloadedVideos} />
           <Stack.Screen name='PlayVideoDowloaded' component={PlayVideoDowloaded}/>
+          <Stack.Screen name='Pay' component={Pay}/>
+          <Stack.Screen name='PaymentMethods' component={PaymentMethods}/>
+          <Stack.Screen name='PaymentWeb' component={PaymentWeb}/>
+          <Stack.Screen name='PaymentSuccess' component={PaymentSuccess}/>
       </Stack.Navigator>
   );
 }
